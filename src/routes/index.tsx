@@ -1,7 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Sun, Wind, Battery, Zap, Droplets, FileText, CheckCircle2, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, Phone, MapPin, Factory, Building2, Landmark, Warehouse, Hospital, GraduationCap, Truck, Cpu } from "lucide-react";
 import logo from "@/assets/igenergy-logo.png.asset.json";
 import hero from "@/assets/hero-energy.jpg";
+import imgSolar from "@/assets/sol-solar.jpg";
+import imgWind from "@/assets/sol-wind.jpg";
+import imgBess from "@/assets/sol-bess.jpg";
+import imgEv from "@/assets/sol-ev.jpg";
+import imgH2 from "@/assets/sol-hydrogen.jpg";
+import imgPpa from "@/assets/sol-ppa.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,12 +23,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: Sun, title: "Solar Energy", desc: "Utility-scale, rooftop and hybrid solar plants engineered for maximum yield and lifecycle value." },
-  { icon: Wind, title: "Wind Power", desc: "Onshore wind projects with data-driven site assessment, turbine selection and long-term O&M." },
-  { icon: Battery, title: "Energy Storage", desc: "BESS solutions that stabilise the grid, firm renewables and unlock time-shifted power." },
-  { icon: Zap, title: "EV Infrastructure", desc: "Fast, ultra-fast and depot charging networks — deployed, operated and monetised end-to-end." },
-  { icon: Droplets, title: "Green Hydrogen", desc: "Electrolyser-based hydrogen production for mobility, industry and export-grade fuel." },
-  { icon: FileText, title: "Innovative PPAs", desc: "Bankable Power Purchase Agreements structured to align risk, tenor and price with your goals." },
+  { img: imgSolar, title: "Solar Energy", desc: "Utility-scale, rooftop and hybrid solar plants engineered for maximum yield and lifecycle value." },
+  { img: imgWind, title: "Wind Power", desc: "Onshore wind projects with data-driven site assessment, turbine selection and long-term O&M." },
+  { img: imgBess, title: "Energy Storage", desc: "BESS solutions that stabilise the grid, firm renewables and unlock time-shifted power." },
+  { img: imgEv, title: "EV Infrastructure", desc: "Fast, ultra-fast and depot charging networks — deployed, operated and monetised end-to-end." },
+  { img: imgH2, title: "Green Hydrogen", desc: "Electrolyser-based hydrogen production for mobility, industry and export-grade fuel." },
+  { img: imgPpa, title: "Innovative PPAs", desc: "Bankable Power Purchase Agreements structured to align risk, tenor and price with your goals." },
 ];
 
 const stages = [
@@ -32,6 +38,17 @@ const stages = [
   "EPC & Deployment",
   "Commissioning",
   "O&M and Analytics",
+];
+
+const industries = [
+  { icon: Factory, title: "Manufacturing", desc: "Round-the-clock clean power for energy-intensive plants." },
+  { icon: Cpu, title: "Data Centres", desc: "Firm renewable supply with storage-backed reliability." },
+  { icon: Landmark, title: "Government & PSU", desc: "Turnkey solar, storage and EV programmes at scale." },
+  { icon: Warehouse, title: "Commercial & Industrial", desc: "Rooftop, open-access and captive solutions for C&I offtakers." },
+  { icon: Hospital, title: "Healthcare", desc: "Resilient hybrid systems for hospitals and diagnostic chains." },
+  { icon: GraduationCap, title: "Education", desc: "Campus-wide clean energy for universities and institutions." },
+  { icon: Truck, title: "Logistics & Mobility", desc: "Depot charging, fleet electrification and green fuels." },
+  { icon: Building2, title: "Real Estate", desc: "Net-zero-ready developments with integrated generation." },
 ];
 
 function Landing() {
@@ -44,7 +61,7 @@ function Landing() {
             <img src={logo.url} alt="IGENERGY" className="h-9 w-auto" />
           </a>
           <nav className="hidden items-center gap-8 md:flex">
-            {["Solutions", "Approach", "Impact", "Contact"].map((l) => (
+            {["About", "Solutions", "Industries", "Approach", "Contact"].map((l) => (
               <a key={l} href={`#${l.toLowerCase()}`} className="text-sm font-medium text-muted-foreground transition hover:text-foreground">
                 {l}
               </a>
@@ -79,8 +96,8 @@ function Landing() {
               <a href="#solutions" className="inline-flex items-center gap-2 rounded-full gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:shadow-glow">
                 Explore solutions <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#approach" className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-6 py-3 text-sm font-semibold backdrop-blur transition hover:bg-background">
-                Our approach
+              <a href="#about" className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-6 py-3 text-sm font-semibold backdrop-blur transition hover:bg-background">
+                About us
               </a>
             </div>
           </div>
@@ -100,30 +117,94 @@ function Landing() {
         </div>
       </section>
 
-      {/* SOLUTIONS */}
-      <section id="solutions" className="mx-auto max-w-7xl px-6 py-24">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Solutions</p>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">One partner. Every new-energy asset class.</h2>
+      {/* ABOUT */}
+      <section id="about" className="mx-auto max-w-7xl px-6 py-24">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">About us</p>
+            <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
+              A technology-driven EPC for the <span className="text-gradient">energy transition</span>.
+            </h2>
           </div>
-          <p className="max-w-md text-muted-foreground">
-            We design, finance, build and operate assets across the clean-energy value chain — so
-            you get a single accountable team from feasibility to first megawatt.
+          <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
+            <p>
+              <span className="font-semibold text-foreground">IGENERGY</span> is a technology-driven EPC company
+              delivering end-to-end renewable energy solutions across solar power, battery energy storage
+              systems (BESS), green hydrogen, and energy infrastructure.
+            </p>
+            <p>
+              In collaboration with <span className="font-semibold text-foreground">I-Generation HK</span>, we
+              combine global expertise with local execution to provide innovative, sustainable and
+              cost-effective solutions for government, public sector, enterprise and institutional clients.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-2">
+              {["EPC", "Solar", "BESS", "Green H₂", "Grid Infra", "O&M"].map((t) => (
+                <span key={t} className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-foreground">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SOLUTIONS */}
+      <section id="solutions" className="border-t border-border bg-secondary/30">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Solutions</p>
+              <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">One partner. Every new-energy asset class.</h2>
+            </div>
+            <p className="max-w-md text-muted-foreground">
+              We design, finance, build and operate assets across the clean-energy value chain — so
+              you get a single accountable team from feasibility to first megawatt.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map(({ img, title, desc }) => (
+              <article key={title} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-soft">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={img}
+                    alt={title}
+                    loading="lazy"
+                    width={1024}
+                    height={768}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRIES */}
+      <section id="industries" className="mx-auto max-w-7xl px-6 py-24">
+        <div className="max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Industries</p>
+          <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
+            Sector-focused clean energy for India's core industries.
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Deep domain expertise across the sectors driving India's growth — with delivery models tuned
+            to each industry's load profile, tariff structure and reliability requirements.
           </p>
         </div>
-
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 transition hover:-translate-y-1 hover:shadow-soft">
-              <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-brand-green/10 blur-2xl transition group-hover:bg-brand-green/20" />
-              <div className="relative">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl gradient-brand text-white shadow-soft">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-6 text-xl font-semibold">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {industries.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-soft">
+              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl gradient-brand text-white shadow-soft">
+                <Icon className="h-5 w-5" />
               </div>
+              <h3 className="mt-5 text-base font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
             </div>
           ))}
         </div>
