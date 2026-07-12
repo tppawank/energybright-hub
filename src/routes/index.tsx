@@ -214,21 +214,22 @@ function Landing() {
       {/* SOLUTIONS */}
       <section id="solutions" className="border-t border-border bg-secondary/30">
         <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Solutions</p>
-              <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">One partner. Every new-energy asset class.</h2>
-            </div>
-            <p className="max-w-md text-muted-foreground">
-              We design, finance, build and operate assets across the clean-energy value chain — so
-              you get a single accountable team from feasibility to first megawatt.
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Solutions</p>
+            <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
+              Integrated Solutions Across the <span className="text-gradient">Energy Value Chain</span>.
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              IGENERGY combines strategic advisory, engineering excellence, financing, project
+              execution and operational support to deliver renewable energy and infrastructure
+              solutions through a single, accountable partner.
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map(({ img, title, desc }) => (
-              <article key={title} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-soft">
-                <div className="aspect-[4/3] overflow-hidden">
+              <article key={title} className="group flex gap-4 rounded-2xl border border-border bg-card p-5 transition hover:-translate-y-1 hover:shadow-soft">
+                <div className="h-24 w-24 shrink-0 overflow-hidden rounded-xl">
                   <img
                     src={img}
                     alt={title}
@@ -238,9 +239,9 @@ function Landing() {
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+                <div className="min-w-0">
+                  <h3 className="text-base font-semibold leading-snug">{title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{desc}</p>
                 </div>
               </article>
             ))}
