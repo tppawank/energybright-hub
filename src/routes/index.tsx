@@ -123,7 +123,7 @@ function Landing() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">About us</p>
             <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
-              A technology-driven EPC for the <span className="text-gradient">energy transition</span>.
+              A technology-driven Company for the <span className="text-gradient">energy transitions</span>.
             </h2>
           </div>
           <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
@@ -148,7 +148,68 @@ function Landing() {
             </div>
           </div>
         </div>
+
+        {/* Strategic Technology Partnerships */}
+        <div className="mt-20">
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Strategic Technology Partnerships</p>
+            <h3 className="mt-3 text-2xl font-bold tracking-tight md:text-3xl">
+              Global partners powering our delivery.
+            </h3>
+            <p className="mt-3 text-muted-foreground">
+              We combine world-class engineering, technology and renewable energy expertise through
+              long-term partnerships with global leaders.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <a
+              href="https://www.exeo.co.jp/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-5 rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-soft"
+            >
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl gradient-brand text-lg font-bold text-white shadow-soft">
+                EXEO
+              </div>
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-widest text-brand-green">Engineering Partner</div>
+                <h4 className="mt-1 text-lg font-semibold group-hover:text-gradient">EXEO Group, Inc.</h4>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Connecting Engineering Company — a leading Japanese engineering group delivering
+                  telecom, energy and urban infrastructure worldwide.
+                </p>
+                <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-brand-green">
+                  Visit exeo.co.jp <ArrowRight className="h-3 w-3" />
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="https://i-generation.com.hk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-5 rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-soft"
+            >
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl gradient-brand text-lg font-bold text-white shadow-soft">
+                i-Gen
+              </div>
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-widest text-brand-green">Renewables Partner</div>
+                <h4 className="mt-1 text-lg font-semibold group-hover:text-gradient">i-Generation Company Limited</h4>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Renewable Energy for Asia — a Hong Kong-based clean-energy platform investing in
+                  and developing solar, storage and green infrastructure across the region.
+                </p>
+                <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-brand-green">
+                  Visit i-generation.com.hk <ArrowRight className="h-3 w-3" />
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
       </section>
+
 
       {/* SOLUTIONS */}
       <section id="solutions" className="border-t border-border bg-secondary/30">
