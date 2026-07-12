@@ -3,11 +3,11 @@ import { ArrowRight, CheckCircle2, Mail, Phone, MapPin, Factory, Building2, Land
 import logo from "@/assets/igenergy-logo.png.asset.json";
 import hero from "@/assets/hero-energy.jpg";
 import imgSolar from "@/assets/sol-solar.jpg";
-import imgWind from "@/assets/sol-wind.jpg";
 import imgBess from "@/assets/sol-bess.jpg";
 import imgEv from "@/assets/sol-ev.jpg";
 import imgH2 from "@/assets/sol-hydrogen.jpg";
 import imgPpa from "@/assets/sol-ppa.jpg";
+import imgPlatform from "@/assets/sol-platform.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,12 +23,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { img: imgSolar, title: "Solar Energy", desc: "Utility-scale, rooftop and hybrid solar plants engineered for maximum yield and lifecycle value." },
-  { img: imgWind, title: "Wind Power", desc: "Onshore wind projects with data-driven site assessment, turbine selection and long-term O&M." },
-  { img: imgBess, title: "Energy Storage", desc: "BESS solutions that stabilise the grid, firm renewables and unlock time-shifted power." },
-  { img: imgEv, title: "EV Infrastructure", desc: "Fast, ultra-fast and depot charging networks — deployed, operated and monetised end-to-end." },
-  { img: imgH2, title: "Green Hydrogen", desc: "Electrolyser-based hydrogen production for mobility, industry and export-grade fuel." },
-  { img: imgPpa, title: "Innovative PPAs", desc: "Bankable Power Purchase Agreements structured to align risk, tenor and price with your goals." },
+  { img: imgSolar, title: "Wind and Solar Energy", desc: "Utility-scale wind and solar plants — from resource assessment and turbine/module selection to hybrid plant design — engineered for maximum yield and lifecycle value." },
+  { img: imgEv, title: "EV Charging Infrastructure", desc: "Fast, ultra-fast and depot charging networks for fleets, highways and cities — deployed, operated and monetised end-to-end." },
+  { img: imgBess, title: "Energy Storage (BESS)", desc: "Battery energy storage systems that firm renewables, stabilise the grid and unlock time-shifted, dispatchable clean power." },
+  { img: imgH2, title: "Green Hydrogen", desc: "Electrolyser-based hydrogen production integrated with renewables — for mobility, industrial decarbonisation and export-grade green fuels." },
+  { img: imgPpa, title: "Innovative PPAs", desc: "Bankable, flexible Power Purchase Agreements structured to align risk, tenor and price with offtaker and financier goals." },
+  { img: imgPlatform, title: "Smart Energy Platform", desc: "Digital energy management platform unifying generation, storage and load data with real-time analytics, forecasting and remote O&M." },
 ];
 
 const stages = [
