@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Mail, Phone, MapPin, Factory, Building2, Landmark, Warehouse, Hospital, GraduationCap, Truck, Cpu } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/igenergy-logo.png.asset.json";
 import hero from "@/assets/hero-energy.jpg";
 import imgSolar from "@/assets/sol-solar.jpg";
@@ -8,6 +8,12 @@ import imgEv from "@/assets/sol-ev.jpg";
 import imgH2 from "@/assets/sol-hydrogen.jpg";
 import imgPpa from "@/assets/sol-ppa.jpg";
 import imgPlatform from "@/assets/sol-platform.jpg";
+import indGcc from "@/assets/ind-gcc.jpg";
+import indRail from "@/assets/ind-railways.jpg";
+import indTelecom from "@/assets/ind-telecom.jpg";
+import indHealth from "@/assets/ind-healthcare.jpg";
+import indEdu from "@/assets/ind-education.jpg";
+import indLog from "@/assets/ind-logistics.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,14 +47,36 @@ const stages = [
 ];
 
 const industries = [
-  { icon: Factory, title: "Manufacturing", desc: "Round-the-clock clean power for energy-intensive plants." },
-  { icon: Cpu, title: "Data Centres", desc: "Firm renewable supply with storage-backed reliability." },
-  { icon: Landmark, title: "Government & PSU", desc: "Turnkey solar, storage and EV programmes at scale." },
-  { icon: Warehouse, title: "Commercial & Industrial", desc: "Rooftop, open-access and captive solutions for C&I offtakers." },
-  { icon: Hospital, title: "Healthcare", desc: "Resilient hybrid systems for hospitals and diagnostic chains." },
-  { icon: GraduationCap, title: "Education", desc: "Campus-wide clean energy for universities and institutions." },
-  { icon: Truck, title: "Logistics & Mobility", desc: "Depot charging, fleet electrification and green fuels." },
-  { icon: Building2, title: "Real Estate", desc: "Net-zero-ready developments with integrated generation." },
+  {
+    img: indGcc,
+    title: "Global AI and Capability Centre (GCC)",
+    desc: "India's GCCs and AI data centres are among the fastest-growing electricity consumers in the country. IGENERGY delivers 24×7 carbon-free power through solar–wind hybrids, BESS and green PPAs — meeting global net-zero mandates while keeping PUE and tariff economics in check.",
+  },
+  {
+    img: indRail,
+    title: "Railways",
+    desc: "Indian Railways is targeting net-zero operations with over 30 GW of renewables in its pipeline. We deliver traction-grade solar, track-side storage and green traction PPAs that decarbonise freight and passenger corridors at scale.",
+  },
+  {
+    img: indTelecom,
+    title: "Telecom",
+    desc: "With 800,000+ telecom towers across India, diesel dependency remains a major cost and emissions burden. IGENERGY deploys solar-plus-storage hybrids and remote-monitored energy systems that cut OPEX and eliminate diesel at cell sites.",
+  },
+  {
+    img: indHealth,
+    title: "Healthcare",
+    desc: "Hospitals and diagnostic chains need uninterrupted, high-quality power. Our rooftop solar, BESS and hybrid systems deliver resilient, low-carbon energy that safeguards critical loads and reduces lifecycle energy costs.",
+  },
+  {
+    img: indEdu,
+    title: "Education",
+    desc: "Universities, IITs and school networks across India are moving to green campuses. We deliver end-to-end campus solarisation, EV charging and smart energy platforms — creating living laboratories for sustainability.",
+  },
+  {
+    img: indLog,
+    title: "Logistics and Mobility",
+    desc: "India's freight and last-mile fleets are electrifying rapidly under FAME and state EV policies. IGENERGY builds depot charging, highway fast-charging corridors and green hydrogen refuelling backed by captive renewables.",
+  },
 ];
 
 function Landing() {
@@ -251,25 +279,36 @@ function Landing() {
 
       {/* INDUSTRIES */}
       <section id="industries" className="mx-auto max-w-7xl px-6 py-24">
-        <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Industries</p>
+        <div className="max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Industries · India Focus</p>
           <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
-            Sector-focused clean energy for India's core industries.
+            Sector-focused clean energy for <span className="text-gradient">India's core industries</span>.
           </h2>
           <p className="mt-4 text-muted-foreground">
             Deep domain expertise across the sectors driving India's growth — with delivery models tuned
-            to each industry's load profile, tariff structure and reliability requirements.
+            to each industry's load profile, tariff structure and reliability requirements. From GCCs and
+            railways to telecom and mobility, IGENERGY brings integrated solar, storage, EV and green
+            hydrogen solutions aligned with India's 500 GW non-fossil target by 2030.
           </p>
         </div>
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {industries.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-soft">
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl gradient-brand text-white shadow-soft">
-                <Icon className="h-5 w-5" />
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {industries.map(({ img, title, desc }) => (
+            <article key={title} className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-soft">
+              <div className="aspect-[4/3] w-full overflow-hidden">
+                <img
+                  src={img}
+                  alt={title}
+                  loading="lazy"
+                  width={800}
+                  height={600}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
               </div>
-              <h3 className="mt-5 text-base font-semibold">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
-            </div>
+              <div className="flex-1 p-6">
+                <h3 className="text-base font-semibold leading-snug">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+              </div>
+            </article>
           ))}
         </div>
       </section>
