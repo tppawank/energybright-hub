@@ -3,11 +3,11 @@ import { ArrowRight, CheckCircle2, Mail, Phone, MapPin, Factory, Building2, Land
 import logo from "@/assets/igenergy-logo.png.asset.json";
 import hero from "@/assets/hero-energy.jpg";
 import imgSolar from "@/assets/sol-solar.jpg";
-import imgWind from "@/assets/sol-wind.jpg";
 import imgBess from "@/assets/sol-bess.jpg";
 import imgEv from "@/assets/sol-ev.jpg";
 import imgH2 from "@/assets/sol-hydrogen.jpg";
 import imgPpa from "@/assets/sol-ppa.jpg";
+import imgPlatform from "@/assets/sol-platform.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,12 +23,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { img: imgSolar, title: "Solar Energy", desc: "Utility-scale, rooftop and hybrid solar plants engineered for maximum yield and lifecycle value." },
-  { img: imgWind, title: "Wind Power", desc: "Onshore wind projects with data-driven site assessment, turbine selection and long-term O&M." },
-  { img: imgBess, title: "Energy Storage", desc: "BESS solutions that stabilise the grid, firm renewables and unlock time-shifted power." },
-  { img: imgEv, title: "EV Infrastructure", desc: "Fast, ultra-fast and depot charging networks — deployed, operated and monetised end-to-end." },
-  { img: imgH2, title: "Green Hydrogen", desc: "Electrolyser-based hydrogen production for mobility, industry and export-grade fuel." },
-  { img: imgPpa, title: "Innovative PPAs", desc: "Bankable Power Purchase Agreements structured to align risk, tenor and price with your goals." },
+  { img: imgSolar, title: "Wind and Solar Energy", desc: "Utility-scale wind and solar plants — from resource assessment and turbine/module selection to hybrid plant design — engineered for maximum yield and lifecycle value." },
+  { img: imgEv, title: "EV Charging Infrastructure", desc: "Fast, ultra-fast and depot charging networks for fleets, highways and cities — deployed, operated and monetised end-to-end." },
+  { img: imgBess, title: "Energy Storage (BESS)", desc: "Battery energy storage systems that firm renewables, stabilise the grid and unlock time-shifted, dispatchable clean power." },
+  { img: imgH2, title: "Green Hydrogen", desc: "Electrolyser-based hydrogen production integrated with renewables — for mobility, industrial decarbonisation and export-grade green fuels." },
+  { img: imgPpa, title: "Innovative PPAs", desc: "Bankable, flexible Power Purchase Agreements structured to align risk, tenor and price with offtaker and financier goals." },
+  { img: imgPlatform, title: "Smart Energy Platform", desc: "Digital energy management platform unifying generation, storage and load data with real-time analytics, forecasting and remote O&M." },
 ];
 
 const stages = [
@@ -214,21 +214,22 @@ function Landing() {
       {/* SOLUTIONS */}
       <section id="solutions" className="border-t border-border bg-secondary/30">
         <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Solutions</p>
-              <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">One partner. Every new-energy asset class.</h2>
-            </div>
-            <p className="max-w-md text-muted-foreground">
-              We design, finance, build and operate assets across the clean-energy value chain — so
-              you get a single accountable team from feasibility to first megawatt.
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Solutions</p>
+            <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
+              Integrated Solutions Across the <span className="text-gradient">Energy Value Chain</span>.
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              IGENERGY combines strategic advisory, engineering excellence, financing, project
+              execution and operational support to deliver renewable energy and infrastructure
+              solutions through a single, accountable partner.
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map(({ img, title, desc }) => (
-              <article key={title} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-soft">
-                <div className="aspect-[4/3] overflow-hidden">
+              <article key={title} className="group flex gap-4 rounded-2xl border border-border bg-card p-5 transition hover:-translate-y-1 hover:shadow-soft">
+                <div className="h-24 w-24 shrink-0 overflow-hidden rounded-xl">
                   <img
                     src={img}
                     alt={title}
@@ -238,9 +239,9 @@ function Landing() {
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+                <div className="min-w-0">
+                  <h3 className="text-base font-semibold leading-snug">{title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{desc}</p>
                 </div>
               </article>
             ))}
