@@ -128,14 +128,16 @@ function Landing() {
           </div>
           <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
             <p>
-              <span className="font-semibold text-foreground">IGENERGY</span> is a technology-driven EPC company
-              delivering end-to-end renewable energy solutions across solar power, battery energy storage
-              systems (BESS), green hydrogen, and energy infrastructure.
+              <span className="font-semibold text-foreground">IGENERGY</span> is a technology-driven
+              company delivering integrated renewable energy infrastructure solutions. Our expertise
+              includes solar energy, battery energy storage systems (BESS), green hydrogen, hybrid
+              energy systems, distributed energy storage, as well as modernisation of energy systems
+              in telecommunications and railways.
             </p>
             <p>
-              In collaboration with <span className="font-semibold text-foreground">I-Generation HK</span>, we
-              combine global expertise with local execution to provide innovative, sustainable and
-              cost-effective solutions for government, public sector, enterprise and institutional clients.
+              We partner with governments and institutions to modernise energy infrastructure
+              through innovative technologies, intelligent energy systems and scalable solutions —
+              by leveraging global partnerships, financing and local capabilities.
             </p>
             <div className="flex flex-wrap gap-2 pt-2">
               {["EPC", "Solar", "BESS", "Green H₂", "Grid Infra", "O&M"].map((t) => (
