@@ -103,10 +103,10 @@ function Landing() {
           </div>
           <div className="grid grid-cols-2 gap-4 self-end">
             {[
-              { k: "6", v: "Energy verticals" },
-              { k: "100%", v: "Concept-to-commissioning" },
-              { k: "24/7", v: "Asset monitoring" },
-              { k: "0", v: "Carbon compromises" },
+              { k: "01", v: "Global Technology Partnership" },
+              { k: "02", v: "Local Capability, Global Excellence" },
+              { k: "03", v: "Concept to Commission" },
+              { k: "04", v: "Sustainable and Future Ready" },
             ].map((s) => (
               <div key={s.v} className="rounded-2xl border border-border bg-card/70 p-5 backdrop-blur">
                 <div className="text-3xl font-bold text-gradient">{s.k}</div>
