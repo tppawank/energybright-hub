@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       { title: "IGENERGY — Powering a Better Tomorrow" },
       { name: "description", content: "IGENERGY delivers end-to-end New Energy Solutions: solar, wind, storage, EV infrastructure, green hydrogen and innovative PPAs — from concept to commissioning." },
       { property: "og:title", content: "IGENERGY — Powering a Better Tomorrow" },
-      { property: "og:description", content: "End-to-end New Energy Solutions: solar, wind, storage, EV, green hydrogen and PPAs." },
+      { property: "og:description", content: "IGENERGY delivers end-to-end New Energy Solutions: solar, wind, storage, EV infrastructure, green hydrogen and innovative PPAs — from concept to commissioning." },
       { property: "og:type", content: "website" },
     ],
   }),
