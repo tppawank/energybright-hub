@@ -110,7 +110,7 @@ function Landing() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.2fr_1fr] lg:py-32">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-muted-foreground backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-green" /> New Energy Hub
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-green" /> Green Energy Solutions
             </span>
             <h1 className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
               Powering a <span className="text-gradient">better tomorrow</span>.
