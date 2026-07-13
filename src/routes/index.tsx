@@ -377,39 +377,69 @@ function Landing() {
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-2">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Contact</p>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">Let's build your next project.</h2>
+            <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
+              Ready to build a <span className="text-gradient">smart energy future</span>?
+            </h2>
             <p className="mt-4 max-w-md text-muted-foreground">
-              Whether you're evaluating a rooftop retrofit or a gigawatt-scale hybrid — talk to
-              our team about how IGENERGY can deliver it end-to-end.
+              Talk to our team about your solar, storage, EV or green-hydrogen project — from
+              feasibility to commissioning, we deliver end-to-end.
             </p>
             <div className="mt-8 space-y-4 text-sm">
-              <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-brand-green" /> hello@igenergy.com</div>
-              <div className="flex items-center gap-3"><Phone className="h-4 w-4 text-brand-green" /> +91 00000 00000</div>
-              <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-brand-green" /> New Delhi · Bengaluru · Global</div>
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" />
+                <span>D-13/170, Sector 7, Rohini, Delhi 110085, India</span>
+              </div>
+              <a href="mailto:Sandeep@ig-energy.in" className="flex items-center gap-3 hover:text-foreground">
+                <Mail className="h-4 w-4 text-brand-green" /> Sandeep@ig-energy.in
+              </a>
+              <a href="tel:+911141234567" className="flex items-center gap-3 hover:text-foreground">
+                <Phone className="h-4 w-4 text-brand-green" /> +91 11 4123 4567
+              </a>
+            </div>
+            <div className="mt-8 flex items-center gap-3">
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card transition hover:-translate-y-0.5 hover:text-brand-green">
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card transition hover:-translate-y-0.5 hover:text-brand-green">
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card transition hover:-translate-y-0.5 hover:text-brand-green">
+                <Youtube className="h-4 w-4" />
+              </a>
             </div>
           </div>
-          <form onSubmit={(e) => e.preventDefault()} className="rounded-3xl border border-border bg-card p-8 shadow-soft">
+          <form
+            action="mailto:Sandeep@ig-energy.in"
+            method="post"
+            encType="text/plain"
+            className="rounded-3xl border border-border bg-card p-8 shadow-soft"
+          >
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="block">
                 <span className="text-sm font-medium">Full name</span>
-                <input className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Your name" />
+                <input name="Name" required className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Your name" />
               </label>
               <label className="block">
                 <span className="text-sm font-medium">Organisation</span>
-                <input className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Company" />
+                <input name="Organisation" className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Company" />
               </label>
             </div>
             <label className="mt-4 block">
               <span className="text-sm font-medium">Email</span>
-              <input type="email" className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="you@company.com" />
+              <input name="Email" type="email" required className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="you@company.com" />
+            </label>
+            <label className="mt-4 block">
+              <span className="text-sm font-medium">Phone</span>
+              <input name="Phone" type="tel" className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="+91 …" />
             </label>
             <label className="mt-4 block">
               <span className="text-sm font-medium">Project brief</span>
-              <textarea rows={4} className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Tell us about your project, timeline and offtake needs…" />
+              <textarea name="Message" rows={4} className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Tell us about your project, timeline and offtake needs…" />
             </label>
             <button type="submit" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:shadow-glow">
               Send enquiry <ArrowRight className="h-4 w-4" />
             </button>
+          </form>
           </form>
         </div>
       </section>
