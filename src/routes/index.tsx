@@ -440,7 +440,6 @@ function Landing() {
               Send enquiry <ArrowRight className="h-4 w-4" />
             </button>
           </form>
-          </form>
         </div>
       </section>
 
