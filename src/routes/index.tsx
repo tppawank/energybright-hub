@@ -346,24 +346,24 @@ function Landing() {
       </section>
 
       {/* APPROACH */}
-      <section id="approach" className="relative overflow-hidden bg-primary text-primary-foreground">
-        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, oklch(0.75 0.19 145 / 0.35), transparent 50%), radial-gradient(circle at 80% 80%, oklch(0.5 0.19 255 / 0.35), transparent 50%)" }} />
+      <section id="approach" className="relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-teal-50 text-foreground">
+        <div className="absolute inset-0 opacity-40" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, oklch(0.85 0.15 145 / 0.35), transparent 55%), radial-gradient(circle at 80% 80%, oklch(0.85 0.12 200 / 0.35), transparent 55%)" }} />
         <div className="relative mx-auto max-w-7xl px-6 py-24">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-brand-lime">Approach</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Approach</p>
             <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">From the first concept to the final commissioning.</h2>
-            <p className="mt-4 text-primary-foreground/70">
+            <p className="mt-4 text-muted-foreground">
               A single, integrated delivery model that removes hand-offs, compresses timelines and
               keeps accountability where it belongs — with us.
             </p>
           </div>
           <ol className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {stages.map((s, i) => (
-              <li key={s} className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-                <span className="font-display text-2xl font-bold text-brand-lime">0{i + 1}</span>
+              <li key={s} className="flex items-start gap-4 rounded-2xl border border-emerald-200/70 bg-white/80 p-6 shadow-soft backdrop-blur">
+                <span className="font-display text-2xl font-bold text-brand-green">0{i + 1}</span>
                 <div>
-                  <div className="font-semibold">{s}</div>
-                  <div className="mt-1 text-sm text-primary-foreground/60">Delivered by a dedicated in-house team.</div>
+                  <div className="font-semibold text-foreground">{s}</div>
+                  <div className="mt-1 text-sm text-muted-foreground">Delivered by a dedicated in-house team.</div>
                 </div>
               </li>
             ))}
@@ -371,48 +371,6 @@ function Landing() {
         </div>
       </section>
 
-      {/* IMPACT */}
-      <section id="impact" className="mx-auto max-w-7xl px-6 py-24">
-        <div className="grid gap-12 lg:grid-cols-2">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Impact</p>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">Clean energy that pencils out.</h2>
-            <p className="mt-4 text-muted-foreground">
-              Every project we deliver is engineered around three non-negotiables: bankable
-              economics, measurable decarbonisation, and long-term asset performance.
-            </p>
-            <ul className="mt-8 space-y-4">
-              {[
-                "Bankable, third-party-verified project structures",
-                "Tariff and PPA design tailored to offtaker needs",
-                "Digital O&M with predictive analytics baked in",
-                "Local content and skilling built into every build",
-              ].map((p) => (
-                <li key={p} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-green" />
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="relative">
-            <div className="absolute inset-0 -z-10 rounded-3xl gradient-brand blur-3xl opacity-20" />
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                { k: "GW-scale", v: "Pipeline under development" },
-                { k: "Concept→COD", v: "Single-team delivery" },
-                { k: "24×7", v: "Remote operations centre" },
-                { k: "Net-zero", v: "Aligned project design" },
-              ].map((c) => (
-                <div key={c.v} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
-                  <div className="text-2xl font-bold text-gradient">{c.k}</div>
-                  <div className="mt-2 text-sm text-muted-foreground">{c.v}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CONTACT */}
       <section id="contact" className="border-t border-border bg-secondary/40">
