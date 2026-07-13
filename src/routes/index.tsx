@@ -325,20 +325,20 @@ function Landing() {
         </div>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map(({ img, title, desc }) => (
-            <article key={title} className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-soft">
-              <div className="aspect-[4/3] w-full overflow-hidden">
+            <article key={title} className="group flex gap-4 overflow-hidden rounded-2xl border border-border bg-card p-4 transition hover:-translate-y-1 hover:shadow-soft">
+              <div className="h-28 w-28 shrink-0 overflow-hidden rounded-xl">
                 <img
                   src={img}
                   alt={title}
                   loading="lazy"
-                  width={800}
-                  height={600}
+                  width={400}
+                  height={400}
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="flex-1 p-6">
+              <div className="min-w-0 flex-1">
                 <h3 className="text-base font-semibold leading-snug">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{desc}</p>
               </div>
             </article>
           ))}
