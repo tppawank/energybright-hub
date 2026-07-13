@@ -312,7 +312,7 @@ function Landing() {
       {/* INDUSTRIES */}
       <section id="industries" className="mx-auto max-w-7xl px-6 py-24">
         <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Industries · India Focus</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Industries</p>
           <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
             Sector-focused clean energy for <span className="text-gradient">India's core industries</span>.
           </h2>
