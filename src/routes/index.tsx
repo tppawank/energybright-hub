@@ -190,29 +190,7 @@ function Landing() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <a
-              href="https://www.exeo.co.jp/en/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-start gap-5 rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-soft"
-            >
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl gradient-brand text-lg font-bold text-white shadow-soft">
-                EXEO
-              </div>
-              <div>
-                <div className="text-xs font-semibold uppercase tracking-widest text-brand-green">Engineering Partner</div>
-                <h4 className="mt-1 text-lg font-semibold group-hover:text-gradient">EXEO Group, Inc.</h4>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Connecting Engineering Company — a leading Japanese engineering group delivering
-                  telecom, energy and urban infrastructure worldwide.
-                </p>
-                <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-brand-green">
-                  Visit exeo.co.jp <ArrowRight className="h-3 w-3" />
-                </span>
-              </div>
-            </a>
-
+          <div className="mt-10 grid gap-6 md:grid-cols-1">
             <a
               href="https://www.i-gener.com/"
               target="_blank"
@@ -235,6 +213,7 @@ function Landing() {
               </div>
             </a>
           </div>
+
         </div>
       </section>
 
