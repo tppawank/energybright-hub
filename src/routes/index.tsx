@@ -235,38 +235,6 @@ function Landing() {
               </div>
             </a>
           </div>
-
-          {/* Indian Technology Partners */}
-          <div className="mt-12">
-            <p className="text-xs font-semibold uppercase tracking-widest text-brand-green">Indian Technology Partners</p>
-            <h4 className="mt-3 text-xl font-bold tracking-tight md:text-2xl">
-              Backed by India's leading solar & cable manufacturers.
-            </h4>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { name: "Adani Solar", tag: "Solar Modules", href: "https://www.adanisolar.com/" },
-                { name: "Waaree Solar", tag: "Solar Modules", href: "https://www.waaree.com/" },
-                { name: "UTL Solar", tag: "Solar & Inverters", href: "https://www.utlsolar.com/" },
-                { name: "Polycab", tag: "Cables & Wires", href: "https://polycab.com/" },
-              ].map((p) => (
-                <a
-                  key={p.name}
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-col items-center rounded-2xl border border-border bg-card p-5 text-center transition hover:-translate-y-1 hover:shadow-soft"
-                >
-                  <div className="flex h-14 w-full items-center justify-center rounded-lg bg-secondary/60 px-3 text-base font-bold tracking-tight text-foreground">
-                    {p.name}
-                  </div>
-                  <div className="mt-3 text-xs font-medium uppercase tracking-widest text-brand-green">{p.tag}</div>
-                  <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground group-hover:text-foreground">
-                    Visit site <ArrowRight className="h-3 w-3" />
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
