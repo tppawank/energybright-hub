@@ -334,7 +334,7 @@ function Landing() {
             <div className="mt-8 space-y-4 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" />
-                <span>D-13/170, Sector 7, Rohini, Delhi 110085, India</span>
+                <span>H-28, Naharpur, Sector 7, Rohini, Delhi 110085, India</span>
               </div>
               <a href="mailto:Sandeep@ig-energy.in" className="flex items-center gap-3 hover:text-foreground">
                 <Mail className="h-4 w-4 text-brand-green" /> Sandeep@ig-energy.in
