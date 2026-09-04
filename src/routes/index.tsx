@@ -81,6 +81,33 @@ const industries = [
 ];
 
 function Landing() {
+  const [form, setForm] = useState({
+    name: "",
+    organisation: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const updateField = (field: keyof typeof form) => (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [field]: e.target.value }));
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const subject = `Enquiry from ${form.name} — IGENERGY website`;
+    const body = `Name: ${form.name}
+Organisation: ${form.organisation || "N/A"}
+Email: ${form.email}
+Phone: ${form.phone || "N/A"}
+
+Project brief:
+${form.message || "N/A"}`;
+    window.location.href = `mailto:sandeep@ig-energy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
