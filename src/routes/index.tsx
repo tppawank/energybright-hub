@@ -364,8 +364,8 @@ ${form.message || "N/A"}`;
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" />
                 <span>H-28, Naharpur, Sector 7, Rohini, Delhi 110085, India</span>
               </div>
-              <a href="mailto:Sandeep@ig-energy.in" className="flex items-center gap-3 hover:text-foreground">
-                <Mail className="h-4 w-4 text-brand-green" /> Sandeep@ig-energy.in
+              <a href="mailto:sandeep@ig-energy.in" className="flex items-center gap-3 hover:text-foreground">
+                <Mail className="h-4 w-4 text-brand-green" /> sandeep@ig-energy.in
               </a>
             </div>
             <div className="mt-8 flex items-center gap-3">
