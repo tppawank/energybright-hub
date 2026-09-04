@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Mail, Phone, MapPin, Facebook, Linkedin, Youtube } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Facebook, Linkedin, Youtube } from "lucide-react";
+import { useState, type FormEvent, type ChangeEvent } from "react";
 import logo from "@/assets/igenergy-logo.png.asset.json";
 import hero from "@/assets/hero-energy.jpg";
 import imgSolar from "@/assets/sol-solar.jpg";
