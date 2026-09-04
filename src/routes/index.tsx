@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Mail, Phone, MapPin, Facebook, Linkedin, Youtube } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Facebook, Linkedin, Youtube } from "lucide-react";
+import { useState, type FormEvent, type ChangeEvent } from "react";
 import logo from "@/assets/igenergy-logo.png.asset.json";
 import hero from "@/assets/hero-energy.jpg";
 import imgSolar from "@/assets/sol-solar.jpg";
@@ -80,6 +81,33 @@ const industries = [
 ];
 
 function Landing() {
+  const [form, setForm] = useState({
+    name: "",
+    organisation: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const updateField = (field: keyof typeof form) => (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [field]: e.target.value }));
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const subject = `Enquiry from ${form.name} — IGENERGY website`;
+    const body = `Name: ${form.name}
+Organisation: ${form.organisation || "N/A"}
+Email: ${form.email}
+Phone: ${form.phone || "N/A"}
+
+Project brief:
+${form.message || "N/A"}`;
+    window.location.href = `mailto:sandeep@ig-energy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
@@ -336,8 +364,8 @@ function Landing() {
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" />
                 <span>H-28, Naharpur, Sector 7, Rohini, Delhi 110085, India</span>
               </div>
-              <a href="mailto:Sandeep@ig-energy.in" className="flex items-center gap-3 hover:text-foreground">
-                <Mail className="h-4 w-4 text-brand-green" /> Sandeep@ig-energy.in
+              <a href="mailto:sandeep@ig-energy.in" className="flex items-center gap-3 hover:text-foreground">
+                <Mail className="h-4 w-4 text-brand-green" /> sandeep@ig-energy.in
               </a>
             </div>
             <div className="mt-8 flex items-center gap-3">
@@ -352,38 +380,91 @@ function Landing() {
               </a>
             </div>
           </div>
-          <form
-            action="mailto:Sandeep@ig-energy.in"
-            method="post"
-            encType="text/plain"
-            className="rounded-3xl border border-border bg-card p-8 shadow-soft"
-          >
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="block">
-                <span className="text-sm font-medium">Full name</span>
-                <input name="Name" required className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Your name" />
-              </label>
-              <label className="block">
-                <span className="text-sm font-medium">Organisation</span>
-                <input name="Organisation" className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Company" />
-              </label>
+          {submitted ? (
+            <div className="flex flex-col justify-center rounded-3xl border border-border bg-card p-8 shadow-soft">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-brand-green">
+                <Mail className="h-6 w-6" />
+              </div>
+              <h3 className="mt-5 text-center text-xl font-semibold">Your email client is opening</h3>
+              <p className="mt-2 text-center text-sm text-muted-foreground">
+                We have pre-filled an email to <a href="mailto:sandeep@ig-energy.in" className="font-medium text-brand-green hover:underline">sandeep@ig-energy.in</a>.<br />
+                Please hit send in your email app to complete the enquiry.
+              </p>
+              <button
+                type="button"
+                onClick={() => setSubmitted(false)}
+                className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold transition hover:bg-accent"
+              >
+                Send another enquiry
+              </button>
             </div>
-            <label className="mt-4 block">
-              <span className="text-sm font-medium">Email</span>
-              <input name="Email" type="email" required className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="you@company.com" />
-            </label>
-            <label className="mt-4 block">
-              <span className="text-sm font-medium">Phone</span>
-              <input name="Phone" type="tel" className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="+91 …" />
-            </label>
-            <label className="mt-4 block">
-              <span className="text-sm font-medium">Project brief</span>
-              <textarea name="Message" rows={4} className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Tell us about your project, timeline and offtake needs…" />
-            </label>
-            <button type="submit" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:shadow-glow">
-              Send enquiry <ArrowRight className="h-4 w-4" />
-            </button>
-          </form>
+          ) : (
+            <form
+              onSubmit={handleSubmit}
+              className="rounded-3xl border border-border bg-card p-8 shadow-soft"
+            >
+              <div className="grid gap-4 sm:grid-cols-2">
+                <label className="block">
+                  <span className="text-sm font-medium">Full name</span>
+                  <input
+                    name="Name"
+                    required
+                    value={form.name}
+                    onChange={updateField("name")}
+                    className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                    placeholder="Your name"
+                  />
+                </label>
+                <label className="block">
+                  <span className="text-sm font-medium">Organisation</span>
+                  <input
+                    name="Organisation"
+                    value={form.organisation}
+                    onChange={updateField("organisation")}
+                    className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                    placeholder="Company"
+                  />
+                </label>
+              </div>
+              <label className="mt-4 block">
+                <span className="text-sm font-medium">Email</span>
+                <input
+                  name="Email"
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={updateField("email")}
+                  className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                  placeholder="you@company.com"
+                />
+              </label>
+              <label className="mt-4 block">
+                <span className="text-sm font-medium">Phone</span>
+                <input
+                  name="Phone"
+                  type="tel"
+                  value={form.phone}
+                  onChange={updateField("phone")}
+                  className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                  placeholder="+91 …"
+                />
+              </label>
+              <label className="mt-4 block">
+                <span className="text-sm font-medium">Project brief</span>
+                <textarea
+                  name="Message"
+                  rows={4}
+                  value={form.message}
+                  onChange={updateField("message")}
+                  className="mt-1.5 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                  placeholder="Tell us about your project, timeline and offtake needs…"
+                />
+              </label>
+              <button type="submit" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:shadow-glow">
+                Send enquiry <ArrowRight className="h-4 w-4" />
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
