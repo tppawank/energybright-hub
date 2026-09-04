@@ -112,9 +112,9 @@ ${form.message || "N/A"}`;
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+        <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between px-4 py-2 sm:px-6">
           <a href="#top" className="flex items-center gap-2">
-            <img src={logo.url} alt="IGENERGY" className="h-20 w-auto" />
+            <img src={logo.url} alt="IGENERGY" className="h-10 w-auto sm:h-12 md:h-16 lg:h-20" />
           </a>
           <nav className="hidden items-center gap-8 md:flex">
             {["About", "Solutions", "Industries", "Approach", "Contact"].map((l) => (
