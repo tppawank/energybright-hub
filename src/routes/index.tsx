@@ -427,7 +427,7 @@ ${form.message || "N/A"}`;
               </div>
               <h3 className="mt-5 text-center text-xl font-semibold">Your email client is opening</h3>
               <p className="mt-2 text-center text-sm text-muted-foreground">
-                We have pre-filled an email to <a href="mailto:sandeep@ig-energy.in" className="font-medium text-brand-green hover:underline">sandeep@ig-energy.in</a>.<br />
+                We have pre-filled an email to <a href="mailto:info@ig-energy.in" className="font-medium text-brand-green hover:underline">info@ig-energy.in</a>.<br />
                 Please hit send in your email app to complete the enquiry.
               </p>
               <button
