@@ -240,19 +240,27 @@ ${form.message || "N/A"}`;
                 </span>
               </div>
             </a>
-            <div className="flex items-start gap-5 rounded-2xl border border-border bg-card p-6">
+            <a
+              href="https://www.cubroc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-5 rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-soft"
+            >
               <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl gradient-brand text-lg font-bold text-white shadow-soft">
                 Cu
               </div>
               <div>
                 <div className="text-xs font-semibold uppercase tracking-widest text-brand-green">Smart Energy &amp; Digital Solutions</div>
-                <h4 className="mt-1 text-lg font-semibold">CUBROC</h4>
+                <h4 className="mt-1 text-lg font-semibold group-hover:text-gradient">CUBROC</h4>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Smart energy and digital-solutions partner, complementing IGENERGY's clean-energy
                   delivery with intelligent monitoring, automation and digital infrastructure.
                 </p>
+                <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-brand-green">
+                  Visit cubroc.com <ArrowRight className="h-3 w-3" />
+                </span>
               </div>
-            </div>
+            </a>
           </div>
 
           <div className="mt-12 max-w-2xl">
