@@ -104,7 +104,7 @@ Phone: ${form.phone || "N/A"}
 
 Project brief:
 ${form.message || "N/A"}`;
-    window.location.href = `mailto:sandeep@ig-energy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:info@ig-energy.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
   };
 
@@ -218,7 +218,7 @@ ${form.message || "N/A"}`;
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-1">
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
             <a
               href="https://www.i-gener.com/"
               target="_blank"
@@ -237,6 +237,46 @@ ${form.message || "N/A"}`;
                 </p>
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-brand-green">
                   Visit i-gener.com <ArrowRight className="h-3 w-3" />
+                </span>
+              </div>
+            </a>
+            <div className="flex items-start gap-5 rounded-2xl border border-border bg-card p-6">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl gradient-brand text-lg font-bold text-white shadow-soft">
+                Cu
+              </div>
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-widest text-brand-green">Smart Energy &amp; Digital Solutions</div>
+                <h4 className="mt-1 text-lg font-semibold">CUBROC</h4>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Smart energy and digital-solutions partner, complementing IGENERGY's clean-energy
+                  delivery with intelligent monitoring, automation and digital infrastructure.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 max-w-2xl">
+            <h3 className="text-2xl font-bold tracking-tight md:text-3xl">India partners.</h3>
+          </div>
+          <div className="mt-6 grid gap-6 md:grid-cols-1">
+            <a
+              href="https://www.clnenergy.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-5 rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-soft"
+            >
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl gradient-brand text-lg font-bold text-white shadow-soft">
+                CLN
+              </div>
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-widest text-brand-green">Lithium-Ion Battery Manufacturer</div>
+                <h4 className="mt-1 text-lg font-semibold group-hover:text-gradient">CLN Energy</h4>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Lithium-Ion Battery Manufacturers in India — advanced lithium-ion battery packs and
+                  energy storage systems powering mobility, telecom and storage applications nationwide.
+                </p>
+                <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-brand-green">
+                  Visit clnenergy.in <ArrowRight className="h-3 w-3" />
                 </span>
               </div>
             </a>
@@ -364,8 +404,8 @@ ${form.message || "N/A"}`;
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" />
                 <span>H-28, Naharpur, Sector 7, Rohini, Delhi 110085, India</span>
               </div>
-              <a href="mailto:sandeep@ig-energy.in" className="flex items-center gap-3 hover:text-foreground">
-                <Mail className="h-4 w-4 text-brand-green" /> sandeep@ig-energy.in
+              <a href="mailto:info@ig-energy.in" className="flex items-center gap-3 hover:text-foreground">
+                <Mail className="h-4 w-4 text-brand-green" /> info@ig-energy.in
               </a>
             </div>
             <div className="mt-8 flex items-center gap-3">
@@ -387,7 +427,7 @@ ${form.message || "N/A"}`;
               </div>
               <h3 className="mt-5 text-center text-xl font-semibold">Your email client is opening</h3>
               <p className="mt-2 text-center text-sm text-muted-foreground">
-                We have pre-filled an email to <a href="mailto:sandeep@ig-energy.in" className="font-medium text-brand-green hover:underline">sandeep@ig-energy.in</a>.<br />
+                We have pre-filled an email to <a href="mailto:info@ig-energy.in" className="font-medium text-brand-green hover:underline">info@ig-energy.in</a>.<br />
                 Please hit send in your email app to complete the enquiry.
               </p>
               <button
